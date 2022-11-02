@@ -3159,6 +3159,10 @@ action_selectmip(int argc, const char* argv[])
     }
 
     ImageRecRef newimg(new ImageRec(*ot.curimg, -1, miplevel, true, true));
+    if (newimg->has_error()) {
+        ot.error(command, newimg->geterror());
+        return 0;
+    }
     ot.curimg = newimg;
     return 0;
 }

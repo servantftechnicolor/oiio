@@ -12,16 +12,16 @@ set -ex
 # debugging info in the CI logs.
 #
 echo ; echo "Results of oiiotool --version:"
-$OpenImageIO_ROOT/bin/oiiotool --version || /bin/true
+$OpenImageIO_ROOT/bin/oiiotool --version || true
 echo ; echo "Results of oiiotool --help:"
-$OpenImageIO_ROOT/bin/oiiotool --help || /bin/true
+$OpenImageIO_ROOT/bin/oiiotool --help || true
 echo ; echo "Results of oiiotool with no args (should get short help message):"
-$OpenImageIO_ROOT/bin/oiiotool || /bin/true
+$OpenImageIO_ROOT/bin/oiiotool || true
 echo ; echo "Run unit tests and simple stats:"
 $OpenImageIO_ROOT/bin/oiiotool --unittest --list-formats --threads 0 \
-                 --cache 1000 --autotile --autopremult --runstats || /bin/true
+                 --cache 1000 --autotile --autopremult --runstats || true
 echo ; echo "Try unknown command:"
-$OpenImageIO_ROOT/bin/oiiotool -q --unknown || /bin/true
+$OpenImageIO_ROOT/bin/oiiotool -q --unknown || true
 
 
 #
