@@ -5778,7 +5778,7 @@ output_file(int /*argc*/, const char* argv[])
     double optime = timer();
     ot.num_outputs += 1;
 
-    if (ot.debug)
+    if (ot.debug && ot.runstats)
         Strutil::print("    output took {}  (total time {}, mem {})\n",
                        Strutil::timeintervalformat(optime, 2),
                        Strutil::timeintervalformat(ot.total_runtime(), 2),
